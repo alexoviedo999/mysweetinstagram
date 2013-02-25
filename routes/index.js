@@ -2,10 +2,9 @@ var ig = require('instagram-node').instagram();
     db = require('../models');
     conf = require('../conf');
 
-ig.use({
-  client_id: 'bbf0db19536440e5a4e639c862db3998',
-  client_secret: 'ce657a84880f4a5f8c474a9dfe78ac41'
-});
+ig.use(conf.instagram);
+
+
 
 module.exports.create = function (app) {
   app.get('/authorize', function(req, res) {
